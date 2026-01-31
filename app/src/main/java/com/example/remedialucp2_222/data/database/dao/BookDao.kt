@@ -2,6 +2,7 @@ package com.example.remedialucp2_222.data.database.dao
 
 import androidx.room.*
 import com.example.remedialucp2_222.data.database.entities.BookEntity
+import com.example.remedialucp2_222.data.database.entities.BookWithAuthors
 import kotlinx.coroutines.flow.Flow
 
 @Dao

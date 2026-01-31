@@ -64,7 +64,7 @@ interface CategoryDao {
     @Query("SELECT COUNT(*) > 0 FROM categories WHERE parentId = :categoryId AND isDeleted = 0")
     suspend fun hasChildCategories(categoryId: String): Boolean
 
-    @Query("SELECT EXISTS(SELECT 1 FROM categories c1 WHERE c1.parentId = c2.id AND c1.id = :categoryId AND c2.isDeleted = 0)")
+    @Query("SELECT EXISTS(SELECT 1 FROM categories WHERE parentId = :newParentId AND id = :categoryId AND isDeleted = 0)")
     suspend fun wouldCreateCycle(categoryId: String, newParentId: String?): Boolean
 
     @Transaction

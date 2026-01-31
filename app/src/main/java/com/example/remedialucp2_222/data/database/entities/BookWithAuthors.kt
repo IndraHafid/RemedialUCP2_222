@@ -7,7 +7,7 @@ data class BookWithAuthors(
     @Embedded val book: BookEntity,
     @Relation(
         parentColumn = "id",
-        entityColumn = "id",
+        entityColumn = "authorId",
         associateBy = androidx.room.Junction(
             value = BookAuthorCrossRef::class,
             parentColumn = "bookId",
